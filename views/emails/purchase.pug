@@ -1,0 +1,17 @@
+extends base
+
+block emailContent
+  div(class='order__header')
+    p Hey #{name}, here is the list of your order:
+
+  each product in products
+    div(class='order__item')
+      p Title: #{product.product.title}
+      p Price: $#{product.product.price}
+      p Quantity: #{product.quantity}
+      
+  div(class='order__total-price')
+    p Total: $#{totalPrice}
+
+  div(class='order__footer')
+    p Thanks you for choose Academlo Store.
